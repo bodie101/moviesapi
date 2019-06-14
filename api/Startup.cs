@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -25,6 +27,15 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Connect to DB
+            string connection = "Server=192.168.99.100;Database=DB_6215_19_S1;User=sa;Password=yourStrong(*)Password;";
+
+            services.AddDbContext<DB_6215_19_S1>(options => options
+            .UseSqlServer(connection)
+            );
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,10 @@
+#GET http://localhost:5000/api/movies
+#GET http://localhost:5000/api/movies/1
+
+#GET http://localhost:5000/api/users/
+#GET http://localhost:5000/api/users/1
+
+
+#GET http://localhost:5000/api/wishlist/
+#GET http://localhost:5000/api/wishlist/1
+
